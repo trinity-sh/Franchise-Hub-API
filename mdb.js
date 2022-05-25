@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 exports.connectdb = function () {
         console.log("Connecting to Franchise Hub database...")
@@ -6,7 +6,7 @@ exports.connectdb = function () {
                 .connect(process.env.MONGODB_URI)
                 .then(console.log("Connection to Franchise Hub database established!"))
                 .catch((e) => {
-                        console.error(`Couldn't connect to Franchise Hub database: ${e}`);
+                        console.error(`\rCouldn't connect to Franchise Hub database: ${e}`);
                         process.exit(1);
                 });
 };
