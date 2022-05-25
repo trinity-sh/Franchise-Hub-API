@@ -91,4 +91,4 @@ const idataSchema = new mongoose.Schema({
         }
 });
 
-module.exports = mongoose.model('idata', fcredSchema, 'investor_data');
+module.exports = mongoose.model('idata', fcredSchema, 'investor-data');
