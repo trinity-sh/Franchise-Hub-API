@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const idataSchema = new mongoose.Schema({
         _id: {
@@ -91,4 +91,4 @@ const idataSchema = new mongoose.Schema({
         }
 });
 
-module.exports = mongoose.model('idata', fcredSchema, 'investor-data');
+module.exports = mongoose.model('idata', idataSchema, 'investor-data');
