@@ -1,0 +1,8 @@
+POST http://192.168.43.79:4000/api/v1/investor/register HTTP/1.1
+content-Type: application/json
+
+{
+       "email" : "jay.dnb@outlook.in",
+       "password" : "strongestpassword69",
+       "name" : "Jayanta Pandit"
+}
