@@ -89,6 +89,8 @@ const idataSchema = new mongoose.Schema({
                 type: Boolean,
                 required: true
         }
+}, {
+        versionKey: false
 });
 
 module.exports = mongoose.model('idata', idataSchema, 'investor-data');
