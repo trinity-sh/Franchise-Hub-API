@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 exports.connectdb = function () {
         console.log("Connecting to Franchise Hub database...")
-        mongoose
-                .connect(process.env.MONGODB_URI)
-                .then(console.log("Connection to Franchise Hub database established!"))
-                .catch((e) => {
-                        console.error(`\rCouldn't connect to Franchise Hub database: ${e}`);
-                        process.exit(1);
-                });
+        try {
+                mongoose.connect(process.env.MONGODB_URI);
+                console.log("Connected ✓");
+        } catch (e) {
+                console.log("Connection failed...");
+                console.error(e);
+                process.exit(1);
+        }
 };
