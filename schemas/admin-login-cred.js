@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const fcredSchema = new mongoose.Schema({
+const admcredSchema = new mongoose.Schema({
         _id: {
                 type: String,
                 required: true
@@ -13,4 +13,4 @@ const fcredSchema = new mongoose.Schema({
         versionKey: false
 });
 
-module.exports = mongoose.model('fcred', fcredSchema, 'franchisor-login-cred');
+module.exports = mongoose.model('admcred', admcredSchema, 'admin-login-cred');
