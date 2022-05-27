@@ -6,9 +6,9 @@ const admTokenSchema = new mongoose.Schema({
                 type: String,
                 required: true
         },
-        expire_in: {
+        expire_at: {
                 type: Number,
-                default: Date.now() + process.env.JWT_ACCESS_WINDOW
+                default: Date.now() + parseInt(process.env.JWT_ACCESS_WINDOW)
         }
 }, {
         versionKey: false
