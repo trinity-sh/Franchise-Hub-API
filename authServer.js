@@ -15,11 +15,11 @@ require('./mdb').connectdb();
 sweeptoken.start();
 
 // init. middleware
-const isTokenValid = require('./middlewares/isTokenValid');
+const isAdmin = require('./middlewares/isAdmin');
 app.use(express.json());
 
 // admin login
-app.post('/api/v1/admin/login', isTokenValid, async (req, res) => {
+app.post('/api/v1/admin/login', isAdmin, async (req, res) => {
         try {
                 if (req.IS_TOKEN_VALID)
                         return res.json({
