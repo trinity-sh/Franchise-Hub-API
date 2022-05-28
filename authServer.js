@@ -22,7 +22,7 @@ app.use(express.json());
 app.post('/api/v1/admin/login', isTokenValid, async (req, res) => {
         try {
                 if (req.IS_TOKEN_VALID)
-                        return res.send({
+                        return res.json({
                                 success: true,
                                 message: "You are already authorised"
                         });
@@ -30,7 +30,7 @@ app.post('/api/v1/admin/login', isTokenValid, async (req, res) => {
                 const adminUser = await admcred.findById(req.body.username);
                 
                 if (adminUser == null)
-                        return res.send({
+                        return res.json({
                                 success: false,
                                 message: "Invalid credential(s)"
                         });
@@ -43,20 +43,20 @@ app.post('/api/v1/admin/login', isTokenValid, async (req, res) => {
                                         expires_at: Date.now() + process.env.JWT_ACCESS_WINDOW
                                 });
 
-                                return res.send({
+                                return res.json({
                                         success: true,
                                         message: "Admin authorised",
                                         access_token: token
                                 });
                         }
                         else
-                                return res.status(403).send({
+                                return res.status(403).json({
                                         success: false,
                                         message: "Invalid credential(s)"
                                 });
                 })();
         } catch (e) {
-                res.status(500).send({
+                res.status(500).json({
                         success: false,
                         message: "Internal server error: " + e
                 });
