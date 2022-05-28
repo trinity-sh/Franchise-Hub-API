@@ -9,12 +9,12 @@ const sweeptoken = require('./cronjobs/tokenSweep');
 
 require('dotenv').config();
 
-// init. express
+// init. express, mongoose, cronjob
 const app = express();
 require('./mdb').connectdb();
 sweeptoken.start();
 
-// register middleware
+// init. middleware
 const isTokenValid = require('./middlewares/isTokenValid');
 app.use(express.json());
 
