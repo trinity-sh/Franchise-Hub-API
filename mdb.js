@@ -7,7 +7,7 @@ exports.connectdb = function () {
                 mongoose.connect(process.env.MONGODB_URI);
                 console.log("Connected ✓");
         } catch (e) {
-                console.log("Connection failed...");
+                console.log("Connection failed: Exiting...");
                 console.error(e);
                 process.exit(1);
         }
