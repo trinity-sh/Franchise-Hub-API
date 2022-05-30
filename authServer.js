@@ -1,7 +1,6 @@
 const express = require('express');
 const jwt  = require('jsonwebtoken');
 const bcrypt  = require('bcrypt');
-const mongoose = require('mongoose');
 
 const admcred = require('./schemas/admin-login-cred');
 const admtoken = require('./schemas/admin-access-token');
