@@ -11,7 +11,8 @@ const admTokenSchema = new mongoose.Schema({
                 default: Date.now() + parseInt(process.env.JWT_ACCESS_WINDOW)
         }
 }, {
-        versionKey: false
+        versionKey: false,
+        timestamps: true
 });
 
 module.exports = mongoose.model('admToken', admTokenSchema, 'admin-access-tokens');

@@ -14,7 +14,8 @@ const trendingVideosSchema = new mongoose.Schema({
                 required: true
         }
 }, {
-        versionKey: false
+        versionKey: false,
+        timestamps: true
 });
 
 module.exports = mongoose.model('trendingVideos', trendingVideosSchema, 'trending-videos');

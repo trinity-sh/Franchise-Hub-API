@@ -10,7 +10,8 @@ const admcredSchema = new mongoose.Schema({
                 required: true
         }
 }, {
-        versionKey: false
+        versionKey: false,
+        timestamps: true
 });
 
 module.exports = mongoose.model('admcred', admcredSchema, 'admin-login-cred');

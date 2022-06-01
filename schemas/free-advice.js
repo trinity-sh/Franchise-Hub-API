@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
 
 const freeAdviceSchema = new mongoose.Schema({
+        is_read: {
+                type: Boolean,
+                required: true,
+                default: false
+        },
         advise: {
                 type: String,
                 enum: ['expand-my-brand', 'buy-a-franchise'],
@@ -15,7 +20,8 @@ const freeAdviceSchema = new mongoose.Schema({
                 required: true
         }
 }, {
-        versionKey: false
+        versionKey: false,
+        timestamps: true
 });
 
 module.exports = mongoose.model('freeAdvice', freeAdviceSchema, 'free-advice');
