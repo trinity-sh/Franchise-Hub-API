@@ -152,3 +152,5 @@ const fregnSchema = new mongoose.Schema({
         versionKey: false,
         timestamps: true
 });
+
+module.exports = mongoose.model('fregn', fregnSchema, 'franchisor-registration');
