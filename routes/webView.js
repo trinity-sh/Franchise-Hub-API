@@ -8,7 +8,7 @@ router.use('/forms/newsletter-subscribers', require('./webview/form-newsletter-s
 router.use('/section/listed-franchises', require('./webview/section-listed-franchises'));
 router.use('/section/trending-videos', require('./webview/section-trending-videos'));
 router.use('/section/events', require('./webview/form-free-advice'));
-router.use('/forms/free-advice', require('./webview/free-advice'));
+router.use('/forms/free-advice', require('./webview/form-free-advice'));
 router.use('/section/filter', require('./webview/section-filter'));
 
 module.exports = router;
