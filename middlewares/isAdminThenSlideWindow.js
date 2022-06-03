@@ -10,8 +10,10 @@ module.exports = async (req, res, next) => {
                 
                         if (null != adminUser) {
                                 req.IS_TOKEN_VALID = 1;
-                                adminUser.expire_at += parseInt(process.env.JWT_ACCESS_WINDOW_INCREMENT);
-                                adminUser.save();
+                                if (adminUser.expire_at - Date.now() <= process.env.JWT_ACCESS_WINDOW_INCREMENT) {
+                                        adminUser.expire_at += parseInt(process.env.JWT_ACCESS_WINDOW_INCREMENT);
+                                        adminUser.save();
+                                }
                         }
                         else
                                 req.IS_TOKEN_VALID = 0;
@@ -20,7 +22,7 @@ module.exports = async (req, res, next) => {
                         req.IS_TOKEN_VALID = 0;
                 
                 if (!req.IS_TOKEN_VALID)
-                        return req.json({
+                        return res.json({
                                 success: false,
                                 message: "Invalid credential(s): You are not authorised"
                         });
