@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const admtoken = require('../schemas/admin-access-token');
 
 module.exports = new CronJob(
-        /* run routine after every 15s */
-        '0-59/15 * * * *',
+        /* run routine after every 1m */
+        '* * * * *',
         async () => {
                 try {
-                        await admtoken.deleteMany({ expires_in: { $lt: Date.now() } });
+                        const query = { expire_at: { $lt: Date.now() } };
+                        await admtoken.deleteMany(query);
                 } catch (e) {
                         console.error(e);
                 }
