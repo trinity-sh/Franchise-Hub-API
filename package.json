@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
-    "devauth": "nodemon authServer.js"
+    "dev": "nodemon server.js --unhandled-rejections=strict --trace-warnings"
   },
   "keywords": [],
   "author": "",
