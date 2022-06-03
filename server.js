@@ -5,7 +5,8 @@ const bcrypt  = require('bcrypt');
 const admcred = require('./schemas/admin-login-cred');
 const admtoken = require('./schemas/admin-access-token');
 const sweeptoken = require('./cronjobs/tokenSweep');
-const dashboard = require('./adminDashboard');
+const dashboard = require('./routes/adminDashboard');
+const webview = require('./routes/webView');
 
 require('dotenv').config();
 
@@ -15,9 +16,10 @@ require('./mdb').connectdb();
 sweeptoken.start();
 
 // init. middleware
-const isAdmin = require('./middlewares/isAdmin');
-app.use('/api/v1/admin/dashboard', dashboard);
 app.use(express.json());
+app.use('/api/v1/admin/dashboard', dashboard);
+app.use('/api/v1/webview', webview);
+const isAdmin = require('./middlewares/isAdmin');
 
 // admin login
 app.post('/api/v1/admin/login', isAdmin, async (req, res) => {
