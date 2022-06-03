@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // init. schemas
-const tvid = require('../../schemas/franchisor-registration');
+const fregn = require('../../schemas/franchisor-registration');
 const news = require('../../schemas/newsletter-subscribers');
 const admcred = require('../../schemas/admin-login-cred');
 const tvid = require('../../schemas/trending-videos');
