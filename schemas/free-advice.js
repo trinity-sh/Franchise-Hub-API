@@ -1,23 +1,26 @@
 const mongoose = require('mongoose')
 
 const freeAdviceSchema = new mongoose.Schema({
-        is_read: {
-                type: Boolean,
-                required: true,
-                default: false
+        metadata: {
+                is_read: {
+                        type: Boolean,
+                        required: true,
+                        default: false
+                }
         },
-        advise: {
-                type: String,
-                enum: ['expand-my-brand', 'buy-a-franchise'],
-                required: true
-        },
-        email: {
-                type: String,
-                required: true
-        },
-        phone_no: {
-                type: String,
-                required: true
+        content: {
+                advise_on: {
+                        type: String,
+                        required: true
+                },
+                email: {
+                        type: String,
+                        required: true
+                },
+                phone_no: {
+                        type: String,
+                        required: true
+                }
         }
 }, {
         versionKey: false,
