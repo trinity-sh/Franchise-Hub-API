@@ -7,7 +7,7 @@ router.use('/section/top-franchise-opportunities', require('./webview/section-to
 router.use('/forms/newsletter-subscribers', require('./webview/form-newsletter-subscribers'));
 router.use('/section/listed-franchises', require('./webview/section-listed-franchises'));
 router.use('/section/trending-videos', require('./webview/section-trending-videos'));
-router.use('/section/events', require('./webview/form-free-advice'));
+router.use('/section/events', require('./webview/section-events'));
 router.use('/forms/free-advice', require('./webview/form-free-advice'));
 router.use('/section/filter', require('./webview/section-filter'));
 
