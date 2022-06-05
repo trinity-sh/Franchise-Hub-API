@@ -182,4 +182,28 @@ router.delete('/:objectId', async (req, res) => {
         }
 });
 
+router.post('/new', async (req, res) => {
+        try {
+                const fregndoc = new fregn(req.body);
+                try {
+                        await fregndoc.save();
+                } catch (e) {
+                        return res.json({
+                                success: false,
+                                message: "Form error: " + e
+                        });
+                }
+                
+                return res.json({
+                        success: true,
+                        message: "Video added successfully"
+                });
+        } catch (e) {
+                res.status(500).json({
+                        success: false,
+                        message: "Internal server error: " + e
+                });
+        }
+});
+
 module.exports = router;
