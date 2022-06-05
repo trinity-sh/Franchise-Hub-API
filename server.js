@@ -1,6 +1,7 @@
 const express = require('express');
 const jwt  = require('jsonwebtoken');
 const bcrypt  = require('bcrypt');
+const cors = require("cors");
 
 const admcred = require('./schemas/admin-login-cred');
 const admtoken = require('./schemas/admin-access-token');
@@ -17,9 +18,19 @@ sweeptoken.start();
 
 // init. middleware
 app.use(express.json());
+app.use(cors({
+        origin: `http://localhost:${process.env.PORT}`,
+        credentials: true,
+}));
+
 app.use('/api/v1/admin/dashboard', dashboard);
 app.use('/api/v1/webview', webview);
 const isAdmin = require('./middlewares/isAdmin');
+
+// Hello World!
+app.get('/', async (req, res) => {
+	return res.send('This is the Franchise Hub express server!');
+});
 
 // admin login
 app.post('/api/v1/admin/login', isAdmin, async (req, res) => {
