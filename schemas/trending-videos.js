@@ -2,16 +2,13 @@ const mongoose = require('mongoose')
 
 const trendingVideosSchema = new mongoose.Schema({
         thumbnail_link: {
-                type: String,
-                required: true
+                type: String
         },
         title: {
-                type: String,
-                required: true
+                type: String
         },
         description: {
-                type: String,
-                required: true
+                type: String
         }
 }, {
         versionKey: false,

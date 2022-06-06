@@ -3,20 +3,16 @@ const mongoose = require('mongoose')
 const eventSchema = new mongoose.Schema({
         content: {        
                 event_banner: {
-                        type: String,
-                        required: true
+                        type: String
                 },
                 event_title: {
-                        type: String,
-                        required: true
+                        type: String
                 },
                 event_date: {
-                        type: String,
-                        required: true
+                        type: String
                 },
                 hotline_no: {
-                        type: String,
-                        required: true
+                        type: String
                 }
         }
 }, {

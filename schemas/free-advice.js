@@ -4,22 +4,18 @@ const freeAdviceSchema = new mongoose.Schema({
         metadata: {
                 is_read: {
                         type: Boolean,
-                        required: true,
                         default: false
                 }
         },
         content: {
                 advise_on: {
-                        type: String,
-                        required: true
+                        type: String
                 },
                 email: {
-                        type: String,
-                        required: true
+                        type: String
                 },
                 phone_no: {
-                        type: String,
-                        required: true
+                        type: String
                 }
         }
 }, {

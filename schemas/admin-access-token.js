@@ -3,8 +3,7 @@ require('dotenv').config('../.env')
 
 const admTokenSchema = new mongoose.Schema({
         access_token: {
-                type: String,
-                required: true
+                type: String
         },
         expire_at: {
                 type: Number,

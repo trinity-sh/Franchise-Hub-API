@@ -2,12 +2,10 @@ const mongoose = require('mongoose');
 
 const admcredSchema = new mongoose.Schema({
         _id: {
-                type: String,
-                required: true
+                type: String
         },
         password: {
-                type: String,
-                required: true
+                type: String
         }
 }, {
         versionKey: false,
