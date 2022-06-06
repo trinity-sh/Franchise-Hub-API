@@ -26,7 +26,7 @@ router.post('/new', async (req, res) => {
                 
                 return res.json({
                         success: true,
-                        message: "Video added successfully"
+                        message: "Form saved successfully"
                 });
         } catch (e) {
                 res.status(500).json({
