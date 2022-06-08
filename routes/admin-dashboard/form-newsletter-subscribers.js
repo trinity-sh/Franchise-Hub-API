@@ -11,9 +11,9 @@ const events = require('../../schemas/events');
 
 // init. middlewares
 router.use(express.json());
-// router.use(require('../../middlewares/isAdminThenSlideWindow'));
+router.use(require('../../middlewares/isAdminThenSlideWindow'));
 
-router.get('/forms/newsletter-subscribers/:page', async (req, res) => {
+router.get('/:page', async (req, res) => {
         try {
                 const payload = await news.find({ })
                         .sort({ "createdAt": -1 })
@@ -32,7 +32,7 @@ router.get('/forms/newsletter-subscribers/:page', async (req, res) => {
         }
 });
 
-router.put('/forms/newsletter-subscribers/mark-allread', async (req, res) => {
+router.put('/mark-allread', async (req, res) => {
         try {
                 await news.updateMany({ "metadata.is_read": false }, { "metadata.is_read": true });
 
@@ -48,7 +48,7 @@ router.put('/forms/newsletter-subscribers/mark-allread', async (req, res) => {
         }
 });
 
-router.delete('/forms/newsletter-subscribers/:objectId', async (req, res) => {
+router.delete('/:objectId', async (req, res) => {
         try {
                 await news.findByIdAndRemove(req.params.objectId);
 
