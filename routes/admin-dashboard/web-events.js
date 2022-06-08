@@ -12,7 +12,7 @@ const events = require('../../schemas/events');
 // init. middlewares
 router.use(express.json());
 
-router.get('/web/events/:page', async (req, res) => {
+router.get('/:page', async (req, res) => {
         try {
                 const payload = await events.find({ })
                         .sort({ "content.event_title": 1 })
@@ -31,7 +31,7 @@ router.get('/web/events/:page', async (req, res) => {
         }
 });
 
-router.post('/web/events/new', async (req, res) => {
+router.post('/new', async (req, res) => {
         try {
                 const ev = new events(req.body);
                 try {
@@ -55,7 +55,7 @@ router.post('/web/events/new', async (req, res) => {
         }
 });
 
-router.delete('/web/events/:objectId', async (req, res) => {
+router.delete('/:objectId', async (req, res) => {
         try {
                 await ev.findByIdAndRemove(req.params.objectId);
 
