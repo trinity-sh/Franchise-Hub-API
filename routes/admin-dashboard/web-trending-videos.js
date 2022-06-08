@@ -11,7 +11,6 @@ const events = require('../../schemas/events');
 
 // init. middlewares
 router.use(express.json());
-router.use(require('../../middlewares/isAdminThenSlideWindow'));
 
 router.get('/:page', async (req, res) => {
         try {
