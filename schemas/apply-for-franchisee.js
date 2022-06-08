@@ -7,17 +7,29 @@ const applyFSchema = new mongoose.Schema({
                 }
         },
         content: {        
-                event_banner: {
+                name: {
                         type: String
                 },
-                event_title: {
+                email: {
                         type: String
                 },
-                event_date: {
+                mobile: {
                         type: String
                 },
-                hotline_no: {
+                state: {
                         type: String
+                },
+                city: {
+                        type: String
+                },
+                pincode: {
+                        type: String
+                },
+                address: {
+                        type: String
+                },
+                inv: {
+                        type: Number
                 }
         }
 }, {
