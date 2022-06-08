@@ -23,7 +23,7 @@ app.use(cors({
         credentials: true,
 }));
 
-app.use('/api/v1/admin/dashboard', require('./middlewares/isAdminThenSlideWindow'), dashboard);
+app.use('/api/v1/admin/dashboard'/* , require('./middlewares/isAdminThenSlideWindow') */, dashboard);
 app.use('/api/v1/webview', webview);
 const isAdmin = require('./middlewares/isAdmin');
 
