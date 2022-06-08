@@ -13,7 +13,7 @@ const events = require('../../schemas/events');
 router.use(express.json());
 router.use(require('../../middlewares/isAdminThenSlideWindow'));
 
-router.get('/forms/free-advice/all/:page', async (req, res) => {
+router.get('/all/:page', async (req, res) => {
         try {
                 const payload = await fadv.find({ })
                         .sort({ "createdAt": -1 })
@@ -32,7 +32,7 @@ router.get('/forms/free-advice/all/:page', async (req, res) => {
         }
 });
 
-router.get('/forms/free-advice/read/:page', async (req, res) => {
+router.get('/read/:page', async (req, res) => {
         try {
                 const payload = await fadv.find(
                         {
@@ -54,7 +54,7 @@ router.get('/forms/free-advice/read/:page', async (req, res) => {
         }
 });
 
-router.get('/forms/free-advice/unread/:page', async (req, res) => {
+router.get('/unread/:page', async (req, res) => {
         try {
                 const payload = await fadv.find(
                         {
@@ -76,7 +76,7 @@ router.get('/forms/free-advice/unread/:page', async (req, res) => {
         }
 });
 
-router.put('/forms/free-advice/mark-read/:objectId', async (req, res) => {
+router.put('/mark-read/:objectId', async (req, res) => {
         try {
                 await fadv.findByIdAndUpdate(req.params.objectId, { "metadata.is_read": true });
 
@@ -92,7 +92,7 @@ router.put('/forms/free-advice/mark-read/:objectId', async (req, res) => {
         }
 });
 
-router.put('/forms/free-advice/mark-unread/:objectId', async (req, res) => {
+router.put('/mark-unread/:objectId', async (req, res) => {
         try {
                 await fadv.findByIdAndUpdate(req.params.objectId, { "metadata.is_read": false });
 
@@ -108,7 +108,7 @@ router.put('/forms/free-advice/mark-unread/:objectId', async (req, res) => {
         }
 });
 
-router.delete('/forms/free-advice/:objectId', async (req, res) => {
+router.delete('/:objectId', async (req, res) => {
         try {
                 await fadv.findByIdAndRemove(req.params.objectId);
 
