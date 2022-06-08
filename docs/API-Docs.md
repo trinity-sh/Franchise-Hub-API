@@ -12,6 +12,8 @@
 
 > •  `POST` ➜ `/api/v1/webview/forms/free-advice/new` <br>
 
+> •  `POST` ➜ `/api/v1/webview/forms/franchisee-application/new` <br>
+
 ### `GET` card data:
 > •  `GET` ➜ `/api/v1/webview/section/top-franchise-opportunities/all` <br>
 
@@ -78,8 +80,24 @@
 
 > •  `DELETE` ➜ `/api/v1/admin/dashboard/forms/franchisor-registration/:objectId` <br>
 
+### Franchisee Application Form Menu:
+
+> •  `GET` ➜ `/api/v1/admin/dashboard/forms/franchisee-application/all/:page`
+ - `?quantity=per-page-quantity` <br>
+
+> •  `GET` ➜ `/api/v1/admin/dashboard/forms/franchisee-application/read/:page`
+ - `?quantity=per-page-quantity` <br>
+
+> •  `GET` ➜ `/api/v1/admin/dashboard/forms/franchisee-application/unread/:page`
+ - `?quantity=per-page-quantity` <br>
+
+> •  `PUT` ➜ `/api/v1/admin/dashboard/forms/franchisee-application/mark-read/:objectId` <br>
+
+> •  `PUT` ➜ `/api/v1/admin/dashboard/forms/franchisee-application/mark-unread/:objectId` <br>
+
+> •  `DELETE` ➜ `/api/v1/admin/dashboard/forms/franchisee-application/:objectId` <br>
+
 ### Free Advice Form Menu:
-> •  `POST` ➜ `/api/v1/admin/dashboard/forms/free-advice/new` <br>
 
 > •  `GET` ➜ `/api/v1/admin/dashboard/forms/free-advice/all/:page`
  - `?quantity=per-page-quantity` <br>
@@ -97,7 +115,7 @@
 > •  `DELETE` ➜ `/api/v1/admin/dashboard/forms/free-advice/:objectId` <br>
 
 ### Newsletter Subscribers Form Menu:
-> •  `GET` ➜ `/api/v1/admin/dashboard/forms/newsletter-subscribers/all/:page`
+> •  `GET` ➜ `/api/v1/admin/dashboard/forms/newsletter-subscribers/:page`
  - `?quantity=per-page-quantity` <br>
 
 > •  `PUT` ➜ `/api/v1/admin/dashboard/forms/newsletter-subscribers/mark-allread` <br>
