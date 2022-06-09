@@ -57,8 +57,8 @@ router.post('/new', async (req, res) => {
 
 router.delete('/:objectId', async (req, res) => {
         try {
-                await ev.findByIdAndRemove(req.params.objectId);
-
+                await events.findByIdAndRemove(req.params.objectId);
+                
                 return res.json({
                         success: true,
                         message: "Object has been deleted successfully"
