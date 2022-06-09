@@ -21,6 +21,9 @@
 
 > •  `GET` ➜ `/api/v1/webview/section/trending-videos/all` <br>
 
+> •  `GET` ➜ `/api/v1/webview/section/trending-franchises` <br>
+ - `?quantity=number-of-items` <br>
+
 > •  `GET` ➜ `/api/v1/webview/section/events/all`
 	
 ### Filter Franchises:
