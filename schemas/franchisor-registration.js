@@ -7,10 +7,12 @@ const fregnSchema = new mongoose.Schema({
                         default: false
                 },
                 is_listed: {
-                        type: Boolean                       
+                        type: Boolean,
+                        default: false                  
                 },
                 is_promoted: {
-                        type: Boolean                        
+                        type: Boolean,
+                        default: false                       
                 },
                 likes: {
                         type: Number,
