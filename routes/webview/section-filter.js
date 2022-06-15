@@ -37,7 +37,7 @@ router.get('/all', async (req, res) => {
                         q = {
                                 "metadata.is_listed": true,
                                 "content.personal_details.industry": req.query.industry,
-                                "content.personal_details.inv_range": {
+                                "content.personal_details.inv": {
                                         $gt: req.query.min,
                                         $lt: req.query.max
                                 }
