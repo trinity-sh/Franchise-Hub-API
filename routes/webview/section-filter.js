@@ -38,8 +38,8 @@ router.get('/all', async (req, res) => {
                                 "metadata.is_listed": true,
                                 "content.personal_details.industry": req.query.industry,
                                 "content.personal_details.inv": {
-                                        $gt: req.query.min,
-                                        $lt: req.query.max
+                                        $gt: parseInt(req.query.min),
+                                        $lt: parseInt(req.query.max)
                                 }
                         }
 
