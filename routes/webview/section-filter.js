@@ -15,8 +15,8 @@ router.use(express.json());
 /*
         ?search_by=location
                 &?industry=industry
-                &?state=indian-state
-                &?city=indian-city
+                &?country=country
+                &?state=state
         ?search_by=investment
                 &?industry=industry
                 &?min=min_investment
@@ -29,8 +29,8 @@ router.get('/all', async (req, res) => {
                         q = {
                                 "metadata.is_listed": true,
                                 "content.personal_details.industry": req.query.industry,
-                                "content.personal_details.state": req.query.state,
-                                "content.personal_details.city": req.query.city
+                                "content.personal_details.country": req.query.country,
+                                "content.personal_details.state": req.query.state
                         };
 
                 else if (req.query.search_by == "investment") 
