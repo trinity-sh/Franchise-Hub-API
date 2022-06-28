@@ -1,7 +1,9 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const jwt  = require('jsonwebtoken');
 const bcrypt  = require('bcrypt');
 const cors = require("cors");
+
 
 const admcred = require('./schemas/admin-login-cred');
 const admtoken = require('./schemas/admin-access-token');
@@ -105,3 +107,5 @@ app.listen(
         process.env.PORT || 3000,
         () => console.log(`Listening on PORT ${process.env.PORT}...`)
 );
+
+module.exports.handler = serverless(app);
