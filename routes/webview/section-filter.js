@@ -47,7 +47,8 @@ router.get('/all', async (req, res) => {
                 
                 return res.json({
                         success: true,
-                        payload: fregndocs
+                        payload: fregndocs,
+                        ping: req.query
                 });
         } catch (e) {
                 res.status(500).json({
