@@ -1,3 +1,3 @@
 # Franchise-Hub-API
 
-Server application for FranchiseHub written in ExpressJS
+REST API for Franchise Hub written in Express.js
