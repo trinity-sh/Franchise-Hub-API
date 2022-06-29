@@ -29,13 +29,13 @@
 ### Filter Franchises:
 > •  `GET` ➜ `/api/v1/webview/section/filter` <br>
 - `?search_by=location`<br>
-  - `&?industry=industry`<br>
-  - `&?state=indian-state`<br>
-  - `&?city=indian-city`<br>
+  - `&industry=industry`<br>
+  - `&country=country`<br>
+  - `&state=state`<br>
 - `?search_by=investment`<br>
-  - `&?industry=industry`<br>
-  - `&?min=min_investment`<br>
-  - `&?max=max_investment`
+  - `&industry=industry`<br>
+  - `&min=min_investment`<br>
+  - `&max=max_investment`
 
 ## Dashboard
 ### Admin Login:
